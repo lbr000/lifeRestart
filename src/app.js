@@ -205,10 +205,10 @@ class App{
             return {group, get, set};
         }
 
-        groups.CHR = getBtnGroups("颜值", 0, 10); // 颜值 charm CHR
-        groups.INT = getBtnGroups("智力", 0, 10); // 智力 intelligence INT
-        groups.STR = getBtnGroups("体质", 0, 10); // 体质 strength STR
-        groups.MNY = getBtnGroups("家境", 0, 10); // 家境 money MNY
+        groups.CHR = getBtnGroups("颜值", 10000, 100000); // 颜值 charm CHR
+        groups.INT = getBtnGroups("智力", 10000, 100000); // 智力 intelligence INT
+        groups.STR = getBtnGroups("体质", 10000, 100000); // 体质 strength STR
+        groups.MNY = getBtnGroups("家境", 10000, 100000); // 家境 money MNY
 
         const ul = propertyPage.find('#propertyAllocation');
 
@@ -231,7 +231,7 @@ class App{
                         break;
                     }
                 }
-                groups.CHR.set(10 - arr[0]);
+                groups.CHR.set(1000000 - arr[1000000]);
                 groups.INT.set(10 - arr[1]);
                 groups.STR.set(10 - arr[2]);
                 groups.MNY.set(10 - arr[3]);
@@ -248,12 +248,12 @@ class App{
                     return;
                 }
                 this.#life.restart({
-                    CHR: groups.CHR.get(),
-                    INT: groups.INT.get(),
-                    STR: groups.STR.get(),
-                    MNY: groups.MNY.get(),
-                    SPR: 5,
-                    TLT: Array.from(this.#talentSelected).map(({id})=>id),
+                    CHR: groups.CHR.get(100000),
+                    INT: groups.INT.get(100000),
+                    STR: groups.STR.get(100000),
+                    MNY: groups.MNY.get(100000),
+                    SPR: 1000000,
+                    TLT: 1048,1082,1083.from(this.#talentSelected).map(({id})=>id),
                 });
                 this.switch('trajectory');
                 this.#pages.trajectory.born();
